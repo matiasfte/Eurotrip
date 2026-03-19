@@ -23,7 +23,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 24px 60px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.82);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid #ddd;
     position: sticky;
@@ -51,11 +51,16 @@ body {
     text-decoration: none;
     color: #1f1f1f;
     font-size: 15px;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .main-nav a:hover {
     color: #8a6f4d;
+}
+
+.main-nav a.active {
+    color: #8a6f4d;
+    font-weight: bold;
 }
 
 /* =========================
@@ -76,6 +81,7 @@ body {
 
 .hero-content {
     max-width: 800px;
+    padding: 0 20px;
 }
 
 .hero-tag {
@@ -89,11 +95,13 @@ body {
     font-size: 56px;
     margin-bottom: 20px;
     line-height: 1.1;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
 .hero-text {
     font-size: 18px;
     margin-bottom: 30px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================
@@ -106,17 +114,25 @@ body {
     color: #fff;
     text-decoration: none;
     border-radius: 999px;
-    transition: 0.3s;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
     background-color: #70593d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
 .card-btn {
+    display: inline-block;
     text-decoration: none;
     color: #8a6f4d;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card-btn:hover {
+    color: #70593d;
 }
 
 /* =========================
@@ -127,19 +143,28 @@ section {
 }
 
 .section-heading {
-    max-width: 800px;
-    margin: 0 auto 40px;
+    max-width: 820px;
+    margin: 0 auto 42px;
     text-align: center;
 }
 
 .section-heading h3 {
     font-size: 34px;
     margin-bottom: 14px;
+    line-height: 1.2;
 }
 
 .section-heading p {
     font-size: 17px;
     color: #555;
+}
+
+.section-kicker {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8a6f4d;
+    margin-bottom: 12px;
 }
 
 .city-section {
@@ -155,6 +180,35 @@ section {
 }
 
 /* =========================
+   ESTADO DEL VIAJE / AHORROS
+========================= */
+.estado-viaje {
+    background: linear-gradient(180deg, #f3ede3 0%, #f7f4ee 100%);
+}
+
+.ahorro-box {
+    border: 1px solid #d8c7ae;
+    background: linear-gradient(180deg, #fffdf9 0%, #fff 100%);
+}
+
+.monto-ahorro {
+    font-size: 34px;
+    line-height: 1.1;
+    font-weight: bold;
+    color: #8a6f4d;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   CONTENEDORES DE TARJETAS
+========================= */
+.cards,
+.info-boxes {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =========================
    CARDS
 ========================= */
 .cards {
@@ -166,20 +220,33 @@ section {
 
 .card {
     width: 320px;
+    min-height: 250px;
     background-color: #fff;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(138, 111, 77, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
 }
 
 .card h4 {
     font-size: 24px;
     margin-bottom: 14px;
+    line-height: 1.2;
 }
 
 .card p {
     margin-bottom: 20px;
     color: #555;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
 }
 
 /* =========================
@@ -194,19 +261,32 @@ section {
 
 .info-box {
     width: 320px;
+    min-height: 220px;
     background-color: #fff;
     padding: 28px;
     border-radius: 20px;
     border: 1px solid #e6dfd4;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 .info-box h4 {
     margin-bottom: 12px;
     font-size: 22px;
+    line-height: 1.2;
 }
 
 .info-box p {
     color: #555;
+    margin-bottom: 10px;
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
 }
 
 /* =========================
@@ -224,15 +304,19 @@ section {
 
 .page-hero-content {
     max-width: 780px;
+    padding: 0 20px;
 }
 
 .page-hero-content h2 {
     font-size: 56px;
     margin-bottom: 18px;
+    line-height: 1.1;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
 .page-hero-content p {
     font-size: 18px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================
@@ -257,6 +341,74 @@ section {
 }
 
 /* =========================
+   BLOQUES ÚTILES DE DESTINOS
+========================= */
+.city-section .cards .card,
+.city-section .info-boxes .info-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.city-section .cards .card::before,
+.city-section .info-boxes .info-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #8a6f4d;
+    opacity: 0.16;
+}
+
+.alt-section .cards .card,
+.alt-section .info-box {
+    background-color: #fcfaf6;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+.countdown-section {
+    background-color: #efe8dc;
+}
+
+.countdown-box {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    width: 180px;
+    background-color: #fff;
+    padding: 28px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e6dfd4;
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 42px;
+    font-weight: bold;
+    color: #8a6f4d;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.countdown-item p {
+    font-size: 15px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================
    FOOTER
 ========================= */
 .site-footer {
@@ -264,4 +416,9 @@ section {
     padding: 30px 20px;
     background-color: #1f1f1f;
     color: #f7f4ee;
+}
+
+.site-footer p {
+    font-size: 15px;
+    letter-spacing: 0.3px;
 }
